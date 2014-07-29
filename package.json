@@ -4,16 +4,16 @@
   "description": "Upload CSVs to Orchestrate",
   "main": "index.js",
   "scripts": {
-    "test":       "npm run jshint && npm run coverage && npm run mocha",
-    "coveralls":  "npm run coverage && ./node_modules/.bin/mocha -u tdd -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js",
-    "jshint":     "./node_modules/.bin/jshint bin lib test",
-    "coverage":   "./node_modules/.bin/jscoverage lib lib-cov",
-    "mocha":      "./node_modules/.bin/mocha test -R spec"
+    "test": "npm run jshint && npm run coverage && npm run mocha",
+    "coveralls": "npm run coverage && ./node_modules/.bin/mocha -u tdd -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js",
+    "jshint": "./node_modules/.bin/jshint bin lib test",
+    "coverage": "./node_modules/.bin/jscoverage lib lib-cov",
+    "mocha": "./node_modules/.bin/mocha test -R spec"
   },
   "author": "Max Thayer <garbados@gmail.com>",
   "license": "ASLv2",
   "dependencies": {
-    "csv": "^0.4.0",
+    "csv-parse": "0.0.5",
     "kew": "^0.4.0",
     "orchestrate": "^0.3.1",
     "yargs": "^1.2.6"
