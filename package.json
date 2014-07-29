@@ -1,7 +1,7 @@
 {
   "name": "orc-csv",
   "version": "0.0.0",
-  "description": "",
+  "description": "Upload CSVs to Orchestrate",
   "main": "index.js",
   "scripts": {
     "test":       "npm run jshint && npm run coverage && npm run mocha",
@@ -10,8 +10,8 @@
     "coverage":   "./node_modules/.bin/jscoverage lib lib-cov",
     "mocha":      "./node_modules/.bin/mocha test -R spec"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Max Thayer <garbados@gmail.com>",
+  "license": "ASLv2",
   "dependencies": {
     "csv": "^0.4.0",
     "kew": "^0.4.0",
