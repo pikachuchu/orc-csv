@@ -35,21 +35,17 @@ if (argv._[0] === 'server') {
 } else {
   // upload a file
   var uploader = orc.upload(argv);
+  var promise;
   if (argv.f) {
-    uploader.file(argv.f)
-    .then(function (res) {
-      console.log('Uploaded', res.length, 'documents');
-    })
-    .fail(function () {
-      console.trace(arguments);
-    });
+    promise = uploader.file(argv.f);
   } else {
-    uploader.stream(process.stdin)
-    .then(function (res) {
-      console.log('Uploaded', res.length, 'documents');
-    })
-    .fail(function () {
-      console.trace(arguments);
-    });
+    promise = uploader.stream(process.stdin);
   }
+  promise
+  .then(function (res) {
+    console.log('Uploaded', res.length, 'documents');
+  })
+  .fail(function () {
+    console.trace(arguments);
+  });
 }
