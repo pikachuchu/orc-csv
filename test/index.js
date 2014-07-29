@@ -1,16 +1,22 @@
-var orc_csv = require('../lib-cov');
+var orc_csv = require('../');
 var fs = require('fs');
 var nock = require('nock');
+var path = require('path');
 
 describe('orc-csv', function () {
   before(function () {
-    this.filepath = 'sample.csv';
+    this.filepath = 'test/sample.csv';
     this.collection = 'sample';
     this.nock = nock("https://api.orchestrate.io")
     .get('/v0')
     .reply(200)
     .post('/v0/' + this.collection)
     .reply(201);
+
+    this.orc_csv = orc_csv({
+      collection: this.collection,
+      api_key: 'alkefgafelakefhea'
+    });
   });
 
   afterEach(function () {
@@ -20,9 +26,7 @@ describe('orc-csv', function () {
 
   it('should sync from a path name', function (done) {
     var self = this;
-    orc_csv({
-      collection: this.collection
-    }).upload.file(this.filepath)
+    this.orc_csv.upload().file(this.filepath)
     .then(function () {
       self.nock.done();
     })
@@ -31,10 +35,8 @@ describe('orc-csv', function () {
 
   it('should sync from a file stream', function (done) {
     var self = this;
-    var stream = fs.createReadStream(this.filepath);
-    orc_csv({
-      collection: this.collection
-    }).upload.stream(stream)
+    var stream = fs.createReadStream(path.resolve(this.filepath));
+    this.orc_csv.upload().stream(stream)
     .then(function () {
       self.nock.done();
     })
@@ -42,9 +44,7 @@ describe('orc-csv', function () {
   });
 
   it('should start a web server containing uploaded docs', function (done) {
-    orc_csv({
-      collection: this.collection
-    }).server({
+    this.orc_csv.server({
       port: 5000
     })
     .then(function (server) {
