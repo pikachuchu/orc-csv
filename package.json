@@ -3,6 +3,9 @@
   "version": "0.0.0",
   "description": "Upload CSVs to Orchestrate",
   "main": "index.js",
+  "bin": {
+    "orc-csv": "./bin/index.js"
+  },
   "scripts": {
     "test": "npm run jshint && npm run coverage && npm run mocha",
     "coveralls": "npm run coverage && ./node_modules/.bin/mocha -u tdd -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js",
@@ -25,6 +28,6 @@
     "jshint": "^2.5.2",
     "mocha": "^1.21.3",
     "mocha-lcov-reporter": "0.0.1",
-    "nock": "^0.42.2"
+    "nock": "^0.34.0"
   }
 }
