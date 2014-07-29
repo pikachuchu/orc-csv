@@ -14,6 +14,7 @@
   "license": "ASLv2",
   "dependencies": {
     "csv-parse": "0.0.5",
+    "http-proxy": "^1.1.6",
     "kew": "^0.4.0",
     "orchestrate": "^0.3.1",
     "yargs": "^1.2.6"

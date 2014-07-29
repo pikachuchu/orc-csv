@@ -2,6 +2,8 @@ var orc_csv = require('../');
 var fs = require('fs');
 var nock = require('nock');
 var path = require('path');
+var http = require('http');
+var assert = require('assert');
 
 describe('orc-csv', function () {
   before(function () {
@@ -44,16 +46,16 @@ describe('orc-csv', function () {
   });
 
   it('should start a web server containing uploaded docs', function (done) {
-    this.orc_csv.server({
+    this.nock.get('/').reply(200);
+
+    var server = this.orc_csv.server({
       port: 5000
-    })
-    .then(function (server) {
-      http.get("http://localhost:5000", function (res) {
-        assert.equal(res.status, 200);
-        server.close();
-        done();
-      });
-    })
-    .fail(done);
+    });
+    
+    http.get("http://localhost:5000", function (res) {
+      assert.equal(res.statusCode, 200);
+      server.close();
+      done();
+    });
   });
 });
