@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test":       "npm run jshint && npm run coverage && npm run mocha",
+    "coveralls":  "npm run coverage && ./node_modules/.bin/mocha -u tdd -R mocha-lcov-reporter | ./node_modules/coveralls/bin/coveralls.js",
+    "jshint":     "./node_modules/.bin/jshint bin lib test",
+    "coverage":   "./node_modules/.bin/jscoverage lib lib-cov",
+    "mocha":      "./node_modules/.bin/mocha test -R spec"
   },
   "author": "",
   "license": "ISC",
