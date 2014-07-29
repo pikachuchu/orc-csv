@@ -45,7 +45,11 @@ if (argv._[0] === 'server') {
     });
   } else {
     uploader.stream(process.stdin)
-    .then(console.log)
-    .fail(console.error);
+    .then(function (res) {
+      console.log('Uploaded', res.length, 'documents');
+    })
+    .fail(function () {
+      console.trace(arguments);
+    });
   }
 }
