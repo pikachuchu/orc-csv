@@ -62,20 +62,26 @@ Use like this:
 var orc_csv = require('orc-csv');
 
 // upload a file
-orc_csv.upload.file(PATH_TO_FILE)
+orc_csv({
+    collection: 'razzamatazz'
+}).upload.file(PATH_TO_FILE)
 .fin(function () {
     console.log('Upload complete');
 });
 
 // upload a stream
 var stream = fs.createReadStream(PATH_TO_FILE);
-orc_csv.upload.stream(stream)
+orc_csv({
+    collection: 'razzamatazz'
+}).upload.stream(stream)
 .fin(function () {
     console.log('Upload complete');
 });
 
 // start the web server
-orc_csv.server({
+orc_csv({
+    collection: 'razzamatazz'
+}).server({
     port: 5000
 })
 .then(function (server) {
