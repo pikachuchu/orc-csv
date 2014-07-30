@@ -17,6 +17,7 @@
   "author": "Max Thayer <garbados@gmail.com>",
   "license": "ASLv2",
   "dependencies": {
+    "async": "^0.9.0",
     "csv-parse": "0.0.5",
     "http-proxy": "^1.1.6",
     "kew": "^0.4.0",
