@@ -8,7 +8,7 @@
   },
   "scripts": {
     "test": "npm run jshint && npm run coverage && npm run mocha",
-    "coveralls": "npm run coverage && ./node_modules/.bin/mocha -u tdd -R mocha-lcov-reporter | ./node_modules/.bin/coveralls",
+    "coveralls": "npm run coverage && ./node_modules/.bin/mocha -R mocha-lcov-reporter | ./node_modules/.bin/coveralls",
     "cov-html": "npm run coverage && ./node_modules/.bin/mocha -R html-cov > coverage.html",
     "jshint": "./node_modules/.bin/jshint bin lib test",
     "coverage": "./node_modules/.bin/jscoverage lib lib-cov",
