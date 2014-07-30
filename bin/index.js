@@ -1,10 +1,15 @@
 #!/usr/bin/env node
 var assert = require('assert');
 var orc_csv = require('../');
+var pkg = require('../package.json');
 
 var argv = require('yargs')
+  .help('help')
+  .version(pkg.version, 'version')
   .usage('Upload CSVs to Orchestrate')
   // aliases
+  .alias('h', 'help')
+  .alias('v', 'version')
   .alias('u', 'api-key')
   .alias('f', 'file')
   .alias('c', 'collection')
@@ -13,7 +18,7 @@ var argv = require('yargs')
   .describe('u', 'An Orchestrate API key. Defaults to $ORCHESTRATE_API_KEY')
   .describe('f', 'Path to the CSV to upload')
   .describe('c', 'Name of the Orchestrate collection to upload files into')
-  .describe('p', 'Port for `$0 server` to listen on.')
+  .describe('p', 'Port for `orc-csv server` to listen on.')
   // examples
   .example('$0 -u API_KEY -f PATH/TO/FILE -c COLLECTION_NAME')
   .example('$0 server -u API_KEY')
