@@ -1,5 +1,10 @@
 # orc-csv
 
+[![Build Status](https://travis-ci.org/orchestrate-io/orc-csv.svg)](https://travis-ci.org/orchestrate-io/orc-csv)
+[![Coverage Status](https://coveralls.io/repos/orchestrate-io/orc-csv/badge.png?branch=master)](https://coveralls.io/r/orchestrate-io/orc-csv?branch=master)
+
+[![NPM version](https://nodei.co/npm/orc-csv.png?downloads=true)](https://nodei.co/npm/orc-csv/)
+
 Upload CSVs to Orchestrate. Comes with a simple web server for exploring datasets.
 
 ## Install
