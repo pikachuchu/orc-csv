@@ -1,4 +1,4 @@
-var orc_csv = require('../');
+var orc_csv = require('../lib-cov');
 var fs = require('fs');
 var nock = require('nock');
 var path = require('path');
