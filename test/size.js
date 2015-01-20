@@ -18,7 +18,7 @@ describe('size test', function () {
   });
 
   it('should handle large files', function (done) {
-    this.timeout(5000);
+    this.timeout(0);
     var self = this;
     
     this.nock
