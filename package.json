@@ -8,13 +8,13 @@
   },
   "scripts": {
     "test": "npm run jshint && npm run coverage && npm run mocha",
-    "coveralls": "npm run coverage && ./node_modules/.bin/mocha -R mocha-lcov-reporter | ./node_modules/.bin/coveralls",
-    "cov-html": "npm run coverage && ./node_modules/.bin/mocha -R html-cov > coverage.html",
-    "jshint": "./node_modules/.bin/jshint bin lib test",
-    "coverage": "./node_modules/.bin/jscoverage lib lib-cov",
-    "mocha": "./node_modules/.bin/mocha test -R spec"
+    "coveralls": "npm run coverage && mocha -R mocha-lcov-reporter | coveralls",
+    "cov-html": "npm run coverage && mocha -R html-cov > coverage.html",
+    "jshint": "jshint bin lib test",
+    "coverage": "jscoverage lib lib-cov",
+    "mocha": "mocha test -R spec"
   },
-  "author": "Max Thayer <garbados@gmail.com>",
+  "author": "Diana Thayer <garbados@gmail.com>",
   "license": "ASLv2",
   "dependencies": {
     "async": "^0.9.0",
