@@ -2,6 +2,7 @@
   "name": "orc-csv",
   "version": "0.1.2",
   "description": "Upload CSVs to Orchestrate",
+  "repository": "orchestrate-io/orc-csv",
   "main": "index.js",
   "bin": {
     "orc-csv": "./bin/index.js"
