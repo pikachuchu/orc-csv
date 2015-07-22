@@ -9,17 +9,18 @@ describe('orc-csv', function () {
   before(function () {
     this.filepath = 'test/sample.csv';
     this.collection = 'sample';
-    this.nock = nock("https://api.orchestrate.io");
+    this.nock = nock('https://api.orchestrate.io');
 
     this.orc_csv = orc_csv({
       collection: this.collection,
-      api_key: 'alkefgafelakefhea'
+      api_key: 'alkefgafelakefhea',
+      api_host: 'api.orchestrate.io'
     });
   });
 
   it('should sync from a path name', function (done) {
     var self = this;
-    
+
     this.nock
     .post('/v0/' + this.collection).reply(201)
     .post('/v0/' + this.collection).reply(201);
@@ -54,8 +55,8 @@ describe('orc-csv', function () {
     var server = this.orc_csv.server({
       port: 5000
     });
-    
-    http.get("http://localhost:5000", function (res) {
+
+    http.get('http://localhost:5000', function (res) {
       assert.equal(res.statusCode, 200);
       server.close();
       done();

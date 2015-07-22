@@ -21,7 +21,7 @@
     "csv-parse": "0.0.5",
     "http-proxy": "^1.1.6",
     "kew": "^0.4.0",
-    "orchestrate": "^0.3.1",
+    "orchestrate": "^0.4.6",
     "yargs": "^1.2.6"
   },
   "devDependencies": {

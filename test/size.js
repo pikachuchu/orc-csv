@@ -9,18 +9,19 @@ describe('size test', function () {
   before(function () {
     this.filepath = 'test/huge.csv';
     this.collection = 'sample';
-    this.nock = nock("https://api.orchestrate.io");
+    this.nock = nock('https://api.orchestrate.io');
 
     this.orc_csv = orc_csv({
       collection: this.collection,
-      api_key: 'alkefgafelakefhea'
+      api_key: 'alkefgafelakefhea',
+      api_host: 'api.orchestrate.io'
     });
   });
 
   it('should handle large files', function (done) {
     this.timeout(0);
     var self = this;
-    
+
     this.nock
     .post('/v0/' + this.collection)
     .times(10000)
