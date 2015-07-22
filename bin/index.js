@@ -22,8 +22,8 @@ var argv = require('yargs')
   .describe('c', 'Name of the Orchestrate collection to upload files into.')
   .describe('p', 'Port for `orc-csv server` to listen on.')
   // examples
-  .example('$0 -u API_KEY -e API_HOST -f PATH/TO/FILE -c COLLECTION_NAME')
-  .example('$0 server -u API_KEY -e API_HOST')
+  .example('$0 -u API_KEY -d DATACENTER_HOST -f PATH/TO/FILE -c COLLECTION_NAME')
+  .example('$0 server -u API_KEY -d DATACENTER_HOST')
   .argv;
 
 var orc = orc_csv({
